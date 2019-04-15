@@ -70,7 +70,6 @@ $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 <br>
 
 								<button type = "submit" class = "buttonStyle" name="submit">Update</button>
-                <button type = "reset" class= "buttonStyle" name="reset">Reset</button>
 			</form>
 		</body>
 	</html>
