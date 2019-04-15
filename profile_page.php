@@ -15,7 +15,7 @@
 		$_SESSION['email'] = $email;
 		$email = $_SESSION['email'];
 
-		$query = "SELECT FName, MInit, LName, Email, State, City, ZIP, Street	FROM customer WHERE Email=\"rayvanwatson@gmail.com\"";
+		$query = "SELECT FName, MInit, LName, Email, State, City, ZIP, Street	FROM customer WHERE Email='$email'";
 
 
 $result = mysqli_query($con, $query);
@@ -32,7 +32,7 @@ $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			<title>Profile Page</title>
 		</head>
 		<body>
-			<form align="center" method="post" action="error.php">
+			<form align="center" method="post" action="update.php">
                 <label for="FName">First Name</label>
                 <input type="text" name="firstname" value="<?php echo $user['FName']; ?>" contenteditable="true">
                 <br>
@@ -69,7 +69,7 @@ $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 <input type="text" name="apartmentnumber" value="<?php echo $ApartmentNo; ?>" contenteditable="true">
                 <br>
 
-								<button type = "submit" class = "buttonStyle" name="submit">Submit</button>
+								<button type = "submit" class = "buttonStyle" name="submit">Update</button>
                 <button type = "reset" class= "buttonStyle" name="reset">Reset</button>
 			</form>
 		</body>
